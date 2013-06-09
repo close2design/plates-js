@@ -997,10 +997,8 @@ var _plates = {
                     var args = [];
                     var target = this.variable.evaluate(scope, container);
 
-                    for (var i = 0; i < call_args.length; i++) {
-                        var arg_expr = call_args[i];
-                        args.push(arg_expr.evaluate(scope, container));
-                    }
+                    for (var i = 0; i < call_args.length; i++)
+                        args.push(call_args[i].evaluate(scope, container));
 
                     return target.apply(container || this, args);
 
